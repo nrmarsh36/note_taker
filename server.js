@@ -1,9 +1,8 @@
-const http = require("http");
 const fs = require("fs");
 const express = require("express");
 const app = express();
 
-const PORT = 8080 || process.env.PORT;
+var PORT = process.env.PORT || 8080;
 
 
 //may not need
@@ -11,18 +10,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 //the above code
 
-const server = http.createServer(handleRequest);
 
 
-
-function handleRequest(req, res) {
-  console.log("success!")
-}
-
-require("./routes/indexRoute")(app);
-require("./routes/notesRoute")(app);
+require("./routes/apiRoute")(app);
+require("./routes/htmlRoute")(app);
 
 
-server.listen(PORT, function() {
+app.listen(PORT, function() {
     console.log("App listening on: http://localhost:" + PORT);
   });

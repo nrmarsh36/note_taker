@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.3.0",
+    "stack": "^0.1.0"
   }
 }
